@@ -90,11 +90,12 @@ export default function Hero() {
                 <div className="w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full bg-gradient-to-br from-teal-400 to-navy-600 p-1">
                   <div className="w-full h-full rounded-full overflow-hidden relative">
                     <Image
-                      src="/headshot.jpeg"
+                      src="/profile.jpeg"
                       alt="Srishti Singhal"
                       fill
                       className="object-cover"
                       priority
+                      unoptimized
                     />
                   </div>
                 </div>
