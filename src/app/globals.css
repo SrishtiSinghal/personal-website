@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #102a43;
+    --card: #ffffff;
+    --card-foreground: #102a43;
+    --muted: #f0f4f8;
+    --muted-foreground: #627d98;
+    --border: #d9e2ec;
+    --accent: #319795;
+    --accent-foreground: #ffffff;
+  }
+
+  .dark {
+    --background: #0a1929;
+    --foreground: #d9e2ec;
+    --card: #102a43;
+    --card-foreground: #d9e2ec;
+    --muted: #243b53;
+    --muted-foreground: #9fb3c8;
+    --border: #334e68;
+    --accent: #4fd1c5;
+    --accent-foreground: #0a1929;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-[var(--border)];
+  }
+
+  body {
+    @apply bg-[var(--background)] text-[var(--foreground)] font-sans;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-teal-600;
+  }
+
+  .dark .gradient-text {
+    @apply from-teal-300 to-teal-500;
+  }
+
+  .glass {
+    @apply bg-white/80 dark:bg-navy-900/80 backdrop-blur-md;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-navy-300 dark:bg-navy-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-navy-400 dark:bg-navy-500;
+}
+
+/* Selection */
+::selection {
+  @apply bg-teal-400/30;
+}
