@@ -54,7 +54,7 @@ export default function Hero() {
                 transition={{ delay: 0.5, duration: 0.6 }}
                 className="text-base sm:text-lg text-[var(--muted-foreground)] mb-8 max-w-xl mx-auto lg:mx-0 tracking-wide"
               >
-                Product Manager | 0&#8594;1 Specialist | MBA Candidate
+                MBA, Rotman School of Management (2026) | BSc Computer Science, UVic (2020)
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}

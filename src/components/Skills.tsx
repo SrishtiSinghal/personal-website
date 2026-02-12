@@ -13,7 +13,6 @@ interface SkillCategory {
   title: string;
   skills: string[];
   color: string;
-  tools?: boolean;
 }
 
 const skillCategories: SkillCategory[] = [
@@ -64,7 +63,6 @@ const skillCategories: SkillCategory[] = [
       "Lovable",
     ],
     color: "slate",
-    tools: true,
   },
 ];
 
@@ -130,22 +128,16 @@ export default function Skills() {
                   <category.icon size={24} className={colors.text} />
                 </div>
                 <h3 className="text-lg font-bold mb-4">{category.title}</h3>
-                {category.tools ? (
-                  <p className={`text-sm font-medium ${colors.text}`}>
-                    {category.skills.join(", ")}
-                  </p>
-                ) : (
-                  <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className={`text-xs font-medium px-2.5 py-1.5 rounded-lg ${colors.bg} ${colors.text} border ${colors.border}`}
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                )}
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className={`text-xs font-medium px-2.5 py-1.5 rounded-lg ${colors.bg} ${colors.text} border ${colors.border}`}
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </motion.div>
             );
           })}
