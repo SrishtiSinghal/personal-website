@@ -1,17 +1,12 @@
 "use client";
 
-import { Linkedin, Github, Mail } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
 
 const socialLinks = [
   {
     icon: Linkedin,
     href: "https://linkedin.com/in/srishti98",
     label: "LinkedIn",
-  },
-  {
-    icon: Github,
-    href: "https://github.com/srishtisinghal",
-    label: "GitHub",
   },
   {
     icon: Mail,

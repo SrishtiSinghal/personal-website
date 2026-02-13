@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatedSection, fadeInUp, motion, staggerContainer } from "@/lib/motion";
-import { Mail, Linkedin, Github, MapPin } from "lucide-react";
+import { Mail, Linkedin } from "lucide-react";
 
 const contactLinks = [
   {
@@ -15,18 +15,6 @@ const contactLinks = [
     label: "LinkedIn",
     value: "linkedin.com/in/srishti98",
     href: "https://linkedin.com/in/srishti98",
-  },
-  {
-    icon: Github,
-    label: "GitHub",
-    value: "github.com/srishtisinghal",
-    href: "https://github.com/srishtisinghal",
-  },
-  {
-    icon: MapPin,
-    label: "Location",
-    value: "Toronto, Canada",
-    href: null,
   },
 ];
 
