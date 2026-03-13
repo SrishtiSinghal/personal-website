@@ -14,7 +14,7 @@ import { Briefcase, CheckCircle2, Zap } from "lucide-react";
 
 interface ExperienceItem {
   company: string;
-  companyInitial: string;
+
   role: string;
   period: string;
   context: string;
@@ -26,7 +26,6 @@ interface ExperienceItem {
 const experiences: ExperienceItem[] = [
   {
     company: "J-Squared Technologies",
-    companyInitial: "J",
     role: "MBA Intern, Senior Product Manager",
     period: "May 2025 - Sept 2025",
     context:
@@ -47,7 +46,6 @@ const experiences: ExperienceItem[] = [
   },
   {
     company: "Teck Resources",
-    companyInitial: "T",
     role: "Senior Product Manager",
     period: "Apr 2023 - Aug 2024",
     context:
@@ -63,7 +61,6 @@ const experiences: ExperienceItem[] = [
   },
   {
     company: "Teck Resources",
-    companyInitial: "T",
     role: "Product Manager II",
     period: "Jan 2022 - Apr 2023",
     context: "Internal developer tools and productivity focus",
@@ -78,7 +75,6 @@ const experiences: ExperienceItem[] = [
   },
   {
     company: "Teck Resources",
-    companyInitial: "T",
     role: "Full-Stack Developer",
     period: "Sept 2020 - Jan 2022",
     context: "Supply chain optimization and ML integration",
@@ -99,7 +95,7 @@ function highlightMetrics(text: string) {
   // split with a capturing group places matches at odd indices
   return parts.map((part, i) =>
     i % 2 === 1 ? (
-      <span key={i} className="font-bold text-teal-600 dark:text-teal-400">
+      <span key={i} className="font-bold text-clay-600 dark:text-clay-400">
         {part}
       </span>
     ) : (
@@ -128,7 +124,7 @@ export default function Experience() {
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
             Work <span className="gradient-text">Experience</span>
           </h2>
-          <div className="w-16 h-1 bg-teal-500 mx-auto mb-16 rounded-full" />
+          <div className="w-16 h-1 bg-clay-500 mx-auto mb-16 rounded-full" />
         </AnimatedSection>
 
         {/* Timeline */}
@@ -141,9 +137,9 @@ export default function Experience() {
         >
           {/* Timeline line */}
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 md:-translate-x-px">
-            <div className="w-full h-full bg-gradient-to-b from-teal-400 via-teal-600 to-slate-400 dark:to-slate-600 rounded-full" />
+            <div className="w-full h-full bg-gradient-to-b from-clay-400 via-clay-600 to-warm-400 dark:to-warm-600 rounded-full" />
             {/* Glow effect */}
-            <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-teal-400 via-teal-600 to-slate-400 dark:to-slate-600 rounded-full blur-sm opacity-30" />
+            <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-clay-400 via-clay-600 to-warm-400 dark:to-warm-600 rounded-full blur-sm opacity-30" />
           </div>
 
           {experiences.map((exp, index) => {
@@ -175,14 +171,10 @@ export default function Experience() {
                 >
                   {isSameCompanyAsPrev ? (
                     /* Smaller continuation dot */
-                    <div className="w-4 h-4 rounded-full bg-gradient-to-br from-teal-400 to-teal-600 border-[3px] border-[var(--background)] shadow-lg shadow-teal-500/30" />
+                    <div className="w-4 h-4 rounded-full bg-gradient-to-br from-clay-400 to-clay-600 border-[3px] border-[var(--background)] shadow-lg shadow-clay-500/30" />
                   ) : (
-                    /* Company initial circle */
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-teal-400 to-teal-600 border-[3px] border-[var(--background)] shadow-lg shadow-teal-500/40 flex items-center justify-center">
-                      <span className="text-white text-sm font-bold">
-                        {exp.companyInitial}
-                      </span>
-                    </div>
+                    /* Company dot */
+                    <div className="w-5 h-5 rounded-full bg-gradient-to-br from-clay-400 to-clay-600 border-[3px] border-[var(--background)] shadow-lg shadow-clay-500/40" />
                   )}
                 </motion.div>
 
@@ -193,15 +185,15 @@ export default function Experience() {
                 <div className="ml-12 md:ml-0 md:w-1/2 md:px-8">
                   <div className="relative bg-[var(--card)] rounded-2xl border shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 p-7 group overflow-hidden">
                     {/* Gradient left border accent */}
-                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-teal-400 via-teal-500 to-teal-600 rounded-l-2xl" />
+                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-clay-400 via-clay-500 to-clay-600 rounded-l-2xl" />
 
                     {/* Period badge */}
                     <div className="flex items-center gap-2 mb-3">
                       <Briefcase
                         size={14}
-                        className="text-teal-500"
+                        className="text-clay-500"
                       />
-                      <span className="text-xs font-medium text-teal-600 dark:text-teal-400 bg-teal-500/10 px-2.5 py-0.5 rounded-full">
+                      <span className="text-xs font-medium text-clay-600 dark:text-clay-400 bg-clay-500/10 px-2.5 py-0.5 rounded-full">
                         {exp.period}
                       </span>
                     </div>
@@ -212,7 +204,7 @@ export default function Experience() {
                     </h3>
 
                     {/* Role title */}
-                    <p className="text-base font-semibold text-teal-600 dark:text-teal-400 mb-2">
+                    <p className="text-base font-semibold text-clay-600 dark:text-clay-400 mb-2">
                       {exp.role}
                     </p>
 
@@ -230,7 +222,7 @@ export default function Experience() {
                         >
                           <CheckCircle2
                             size={16}
-                            className="flex-shrink-0 mt-0.5 text-teal-500"
+                            className="flex-shrink-0 mt-0.5 text-clay-500"
                           />
                           <span>{highlightMetrics(achievement)}</span>
                         </li>
@@ -243,14 +235,14 @@ export default function Experience() {
                       whileInView={{ opacity: 1 }}
                       transition={{ delay: 0.3, duration: 0.5 }}
                       viewport={{ once: true }}
-                      className="bg-gradient-to-r from-teal-500/10 to-teal-500/5 dark:from-teal-500/15 dark:to-teal-500/5 border border-teal-500/20 rounded-xl p-4 mb-5"
+                      className="bg-gradient-to-r from-clay-500/10 to-clay-500/5 dark:from-clay-500/15 dark:to-clay-500/5 border border-clay-500/20 rounded-xl p-4 mb-5"
                     >
                       <div className="flex items-start gap-2">
                         <Zap
                           size={14}
-                          className="flex-shrink-0 mt-0.5 text-teal-500"
+                          className="flex-shrink-0 mt-0.5 text-clay-500"
                         />
-                        <p className="text-xs font-semibold text-teal-700 dark:text-teal-300">
+                        <p className="text-xs font-semibold text-clay-700 dark:text-clay-300">
                           {exp.impact}
                         </p>
                       </div>
@@ -261,7 +253,7 @@ export default function Experience() {
                       {exp.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="text-xs px-3 py-1 rounded-full bg-teal-500/10 text-teal-700 dark:text-teal-300 font-medium"
+                          className="text-xs px-3 py-1 rounded-full bg-clay-500/10 text-clay-700 dark:text-clay-300 font-medium"
                         >
                           {tag}
                         </span>

@@ -1,22 +1,25 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, Moon, Download } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 
 const navLinks = [
-  { name: "About", href: "#about" },
-  { name: "Experience", href: "#experience" },
-  { name: "Projects", href: "#projects" },
-  { name: "Skills", href: "#skills" },
-  { name: "Contact", href: "#contact" },
+  { name: "About", href: "/#about" },
+  { name: "Experience", href: "/experience" },
+  { name: "Projects", href: "/projects" },
+  { name: "Skills", href: "/skills" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,9 +31,33 @@ export default function Navbar() {
 
   const handleClick = (href: string) => {
     setIsOpen(false);
-    const el = document.querySelector(href);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+
+    // Hash link (e.g. /#about, /#contact)
+    if (href.startsWith("/#")) {
+      const hash = href.slice(1); // "#about"
+      if (pathname === "/") {
+        // Already on homepage, just scroll
+        const el = document.querySelector(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      } else {
+        // Navigate to homepage then scroll
+        router.push(href);
+      }
+      return;
+    }
+
+    // Regular route link
+    router.push(href);
+  };
+
+  const handleLogoClick = () => {
+    setIsOpen(false);
+    if (pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      router.push("/");
     }
   };
 
@@ -49,10 +76,10 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <button
-            onClick={() => handleClick("#hero")}
-            className="text-lg font-bold tracking-tight"
+            onClick={handleLogoClick}
+            className="text-lg font-bold tracking-tight gradient-text"
           >
-            <span className="gradient-text">SS</span>
+            Srishti Singhal
           </button>
 
           {/* Desktop Nav */}
@@ -61,7 +88,11 @@ export default function Navbar() {
               <button
                 key={link.name}
                 onClick={() => handleClick(link.href)}
-                className="px-3 py-2 text-sm font-medium text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors rounded-lg hover:bg-[var(--muted)]"
+                className={`px-3 py-2 text-sm font-medium transition-colors rounded-lg hover:bg-[var(--muted)] ${
+                  pathname === link.href
+                    ? "text-clay-600 dark:text-clay-400"
+                    : "text-[var(--muted-foreground)] hover:text-[var(--foreground)]"
+                }`}
               >
                 {link.name}
               </button>
@@ -77,7 +108,7 @@ export default function Navbar() {
             <a
               href="/Srishti%27s%20Resume.pdf"
               download="Srishti's Resume.pdf"
-              className="ml-2 flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg bg-teal-500 text-white hover:bg-teal-600 transition-colors"
+              className="ml-2 flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg bg-clay-500 text-white hover:bg-clay-600 transition-colors"
             >
               <Download size={14} />
               Resume
@@ -118,7 +149,11 @@ export default function Navbar() {
                 <button
                   key={link.name}
                   onClick={() => handleClick(link.href)}
-                  className="block w-full text-left px-3 py-2.5 text-sm font-medium text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--muted)] rounded-lg transition-colors"
+                  className={`block w-full text-left px-3 py-2.5 text-sm font-medium rounded-lg transition-colors ${
+                    pathname === link.href
+                      ? "text-clay-600 dark:text-clay-400 bg-[var(--muted)]"
+                      : "text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--muted)]"
+                  }`}
                 >
                   {link.name}
                 </button>
@@ -126,7 +161,7 @@ export default function Navbar() {
               <a
                 href="/Srishti%27s%20Resume.pdf"
                 download="Srishti's Resume.pdf"
-                className="flex items-center gap-1.5 px-3 py-2.5 text-sm font-medium text-teal-500 hover:text-teal-600 transition-colors"
+                className="flex items-center gap-1.5 px-3 py-2.5 text-sm font-medium text-clay-500 hover:text-clay-600 transition-colors"
               >
                 <Download size={14} />
                 Download Resume

@@ -4,27 +4,27 @@
 
 @layer base {
   :root {
-    --background: #ffffff;
-    --foreground: #102a43;
+    --background: #FAF8F5;
+    --foreground: #2B2522;
     --card: #ffffff;
-    --card-foreground: #102a43;
-    --muted: #f0f4f8;
-    --muted-foreground: #627d98;
-    --border: #d9e2ec;
-    --accent: #319795;
+    --card-foreground: #2B2522;
+    --muted: #F5F0EA;
+    --muted-foreground: #7A6C5C;
+    --border: #E8E0D4;
+    --accent: #9C7A56;
     --accent-foreground: #ffffff;
   }
 
   .dark {
-    --background: #0a1929;
-    --foreground: #d9e2ec;
-    --card: #102a43;
-    --card-foreground: #d9e2ec;
-    --muted: #243b53;
-    --muted-foreground: #9fb3c8;
-    --border: #334e68;
-    --accent: #4fd1c5;
-    --accent-foreground: #0a1929;
+    --background: #1A1613;
+    --foreground: #E8E0D4;
+    --card: #231E19;
+    --card-foreground: #E8E0D4;
+    --muted: #3D3428;
+    --muted-foreground: #B8A898;
+    --border: #4A3F35;
+    --accent: #D4AD84;
+    --accent-foreground: #1A1613;
   }
 }
 
@@ -40,6 +40,10 @@
   html {
     scroll-behavior: smooth;
   }
+
+  h1, h2, h3 {
+    font-family: var(--font-caveat), cursive;
+  }
 }
 
 @layer utilities {
@@ -48,19 +52,27 @@
   }
 
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-teal-600;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-clay-500 to-clay-700;
   }
 
   .dark .gradient-text {
-    @apply from-teal-300 to-teal-500;
+    @apply from-clay-300 to-clay-500;
   }
 
   .glass {
-    @apply bg-white/80 dark:bg-navy-900/80 backdrop-blur-md;
+    @apply bg-white/80 dark:bg-warm-900/80 backdrop-blur-md;
   }
 
   .card-hover {
     @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  .text-shadow-light {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 0 8px rgba(255, 255, 255, 0.4);
+  }
+
+  .dark .text-shadow-light {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 0 8px rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -74,14 +86,14 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-navy-300 dark:bg-navy-600 rounded-full;
+  @apply bg-warm-300 dark:bg-warm-600 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-navy-400 dark:bg-navy-500;
+  @apply bg-warm-400 dark:bg-warm-500;
 }
 
 /* Selection */
 ::selection {
-  @apply bg-teal-400/30;
+  @apply bg-clay-400/30;
 }

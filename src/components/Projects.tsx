@@ -33,7 +33,7 @@ const projects: Project[] = [
       "Building go-to-market playbook for space-tech",
     ],
     tags: ["Space-Tech", "GTM Strategy", "Fundraising"],
-    gradient: "from-blue-500 to-purple-600",
+    gradient: "from-warm-500 to-warm-700",
   },
   {
     title: "Muse Health",
@@ -48,7 +48,7 @@ const projects: Project[] = [
       "Developed international market entry strategy",
     ],
     tags: ["Health-Tech", "CES 2026", "Partnerships"],
-    gradient: "from-pink-500 to-rose-600",
+    gradient: "from-clay-400 to-clay-600",
   },
   {
     title: "Toronto Transit Commission",
@@ -63,7 +63,7 @@ const projects: Project[] = [
       "Analyzed competitive dynamics vs. Uber/Lyft",
     ],
     tags: ["Public Transit", "Strategy", "Foresight"],
-    gradient: "from-amber-500 to-orange-600",
+    gradient: "from-warm-600 to-warm-800",
   },
 ];
 
@@ -75,7 +75,7 @@ export default function Projects() {
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
             Featured <span className="gradient-text">Projects</span>
           </h2>
-          <div className="w-16 h-1 bg-teal-500 mx-auto mb-4 rounded-full" />
+          <div className="w-16 h-1 bg-clay-500 mx-auto mb-4 rounded-full" />
           <p className="text-center text-[var(--muted-foreground)] mb-12 max-w-2xl mx-auto">
             Select projects from my MBA experience, working with startups,
             enterprises, and public-sector organizations.
@@ -115,10 +115,10 @@ export default function Projects() {
                 </div>
 
                 {/* Title and role */}
-                <h3 className="text-lg font-bold mb-1 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+                <h3 className="text-lg font-bold mb-1 group-hover:text-clay-600 dark:group-hover:text-clay-400 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-sm font-medium text-teal-600 dark:text-teal-400 mb-3">
+                <p className="text-sm font-medium text-clay-600 dark:text-clay-400 mb-3">
                   {project.role}
                 </p>
 
@@ -136,7 +136,7 @@ export default function Projects() {
                     >
                       <ExternalLink
                         size={12}
-                        className="flex-shrink-0 mt-1 text-teal-500"
+                        className="flex-shrink-0 mt-1 text-clay-500"
                       />
                       <span>{h}</span>
                     </li>

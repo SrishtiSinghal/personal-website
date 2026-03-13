@@ -25,7 +25,7 @@ const skillCategories: SkillCategory[] = [
       "Customer Discovery & Market Sizing",
       "Prioritization Frameworks (RICE, ICE)",
     ],
-    color: "teal",
+    color: "clay",
   },
   {
     icon: Cpu,
@@ -36,7 +36,7 @@ const skillCategories: SkillCategory[] = [
       "API Integrations & Platform Architecture",
       "A/B Testing & KPI Tracking",
     ],
-    color: "purple",
+    color: "warm",
   },
   {
     icon: Users,
@@ -62,7 +62,7 @@ const skillCategories: SkillCategory[] = [
       "Claude Code",
       "Lovable",
     ],
-    color: "slate",
+    color: "stone",
   },
 ];
 
@@ -70,17 +70,17 @@ const colorMap: Record<
   string,
   { bg: string; text: string; border: string; iconBg: string }
 > = {
-  teal: {
-    bg: "bg-teal-500/10",
-    text: "text-teal-700 dark:text-teal-300",
-    border: "border-teal-500/20",
-    iconBg: "bg-teal-500/15",
+  clay: {
+    bg: "bg-clay-500/10",
+    text: "text-clay-700 dark:text-clay-300",
+    border: "border-clay-500/20",
+    iconBg: "bg-clay-500/15",
   },
-  purple: {
-    bg: "bg-purple-500/10",
-    text: "text-purple-700 dark:text-purple-300",
-    border: "border-purple-500/20",
-    iconBg: "bg-purple-500/15",
+  warm: {
+    bg: "bg-warm-500/10",
+    text: "text-warm-700 dark:text-warm-300",
+    border: "border-warm-500/20",
+    iconBg: "bg-warm-500/15",
   },
   amber: {
     bg: "bg-amber-500/10",
@@ -88,11 +88,11 @@ const colorMap: Record<
     border: "border-amber-500/20",
     iconBg: "bg-amber-500/15",
   },
-  slate: {
-    bg: "bg-slate-500/10",
-    text: "text-slate-700 dark:text-slate-300",
-    border: "border-slate-500/20",
-    iconBg: "bg-slate-500/15",
+  stone: {
+    bg: "bg-stone-500/10",
+    text: "text-stone-700 dark:text-stone-300",
+    border: "border-stone-500/20",
+    iconBg: "bg-stone-500/15",
   },
 };
 
@@ -104,7 +104,7 @@ export default function Skills() {
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
             Skills & <span className="gradient-text">Expertise</span>
           </h2>
-          <div className="w-16 h-1 bg-teal-500 mx-auto mb-12 rounded-full" />
+          <div className="w-16 h-1 bg-clay-500 mx-auto mb-12 rounded-full" />
         </AnimatedSection>
 
         <motion.div

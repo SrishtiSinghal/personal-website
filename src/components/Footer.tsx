@@ -32,7 +32,7 @@ export default function Footer() {
                 href={link.href}
                 target={link.href.startsWith("mailto") ? undefined : "_blank"}
                 rel={link.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
-                className="w-9 h-9 rounded-lg flex items-center justify-center text-[var(--muted-foreground)] hover:text-teal-500 hover:bg-teal-500/10 transition-all"
+                className="w-9 h-9 rounded-lg flex items-center justify-center text-[var(--muted-foreground)] hover:text-clay-500 hover:bg-clay-500/10 transition-all"
                 aria-label={link.label}
               >
                 <link.icon size={18} />

@@ -18,7 +18,7 @@ const education = [
     activities: [
       "Director of Alumni & Outreach, Business Technology Association",
     ],
-    gradient: "from-blue-600 to-indigo-700",
+    gradient: "from-warm-600 to-warm-800",
   },
   {
     school: "University of Victoria",
@@ -27,7 +27,7 @@ const education = [
     year: "2016 - 2020",
     logo: "UV",
     activities: ["Orientation Leader"],
-    gradient: "from-teal-500 to-emerald-600",
+    gradient: "from-clay-500 to-clay-700",
   },
 ];
 
@@ -39,7 +39,7 @@ export default function Education() {
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
             <span className="gradient-text">Education</span>
           </h2>
-          <div className="w-16 h-1 bg-teal-500 mx-auto mb-12 rounded-full" />
+          <div className="w-16 h-1 bg-clay-500 mx-auto mb-12 rounded-full" />
         </AnimatedSection>
 
         <motion.div
@@ -76,7 +76,7 @@ export default function Education() {
                 <div className="flex items-center gap-2 mb-3">
                   <GraduationCap
                     size={16}
-                    className="text-teal-500"
+                    className="text-clay-500"
                   />
                   <span className="font-semibold">{edu.degree}</span>
                 </div>
@@ -93,7 +93,7 @@ export default function Education() {
                       >
                         <Award
                           size={14}
-                          className="flex-shrink-0 mt-0.5 text-teal-500"
+                          className="flex-shrink-0 mt-0.5 text-clay-500"
                         />
                         <span className="text-sm text-[var(--muted-foreground)]">
                           {activity}
