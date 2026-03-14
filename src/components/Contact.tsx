@@ -30,7 +30,7 @@ export default function Contact() {
             Get In <span className="gradient-text">Touch</span>
           </h2>
           <div className="w-16 h-1 bg-clay-500 mx-auto mb-4 rounded-full" />
-          <p className="text-center text-[var(--muted-foreground)] mb-12 max-w-xl mx-auto">
+          <p className="text-center text-lg text-[var(--foreground)]/80 mb-12 max-w-xl mx-auto leading-relaxed">
             I&apos;m always open to discussing new opportunities, AI product
             ideas, or just connecting over coffee. Let&apos;s talk!
           </p>

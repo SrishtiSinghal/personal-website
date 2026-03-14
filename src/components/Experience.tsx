@@ -10,7 +10,7 @@ import {
   scaleIn,
   motion,
 } from "@/lib/motion";
-import { Briefcase, CheckCircle2, Zap } from "lucide-react";
+import { Briefcase, Zap } from "lucide-react";
 
 interface ExperienceItem {
   company: string;
@@ -209,22 +209,18 @@ export default function Experience() {
                     </p>
 
                     {/* Context */}
-                    <p className="text-xs text-[var(--muted-foreground)] mb-5 italic">
+                    <p className="text-sm text-[var(--muted-foreground)] mb-5 italic">
                       {exp.context}
                     </p>
 
                     {/* Achievements */}
-                    <ul className="space-y-3 mb-5">
+                    <ul className="space-y-3 mb-5 list-disc list-outside pl-5">
                       {exp.achievements.map((achievement) => (
                         <li
                           key={achievement}
-                          className="flex gap-2.5 text-sm text-[var(--foreground)]"
+                          className="text-base text-[var(--foreground)] leading-relaxed"
                         >
-                          <CheckCircle2
-                            size={16}
-                            className="flex-shrink-0 mt-0.5 text-clay-500"
-                          />
-                          <span>{highlightMetrics(achievement)}</span>
+                          {highlightMetrics(achievement)}
                         </li>
                       ))}
                     </ul>
@@ -242,7 +238,7 @@ export default function Experience() {
                           size={14}
                           className="flex-shrink-0 mt-0.5 text-clay-500"
                         />
-                        <p className="text-xs font-semibold text-clay-700 dark:text-clay-300">
+                        <p className="text-sm font-semibold text-clay-700 dark:text-clay-300">
                           {exp.impact}
                         </p>
                       </div>

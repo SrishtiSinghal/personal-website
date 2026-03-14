@@ -42,7 +42,7 @@
   }
 
   h1, h2, h3 {
-    font-family: var(--font-caveat), cursive;
+    font-family: var(--font-heading), sans-serif;
   }
 }
 

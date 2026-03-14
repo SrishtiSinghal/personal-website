@@ -6,7 +6,7 @@ import {
   fadeInUp,
   motion,
 } from "@/lib/motion";
-import { ExternalLink, Rocket, Heart, Train } from "lucide-react";
+import { Rocket, Heart, Train } from "lucide-react";
 
 interface Project {
   title: string;
@@ -76,7 +76,7 @@ export default function Projects() {
             Featured <span className="gradient-text">Projects</span>
           </h2>
           <div className="w-16 h-1 bg-clay-500 mx-auto mb-4 rounded-full" />
-          <p className="text-center text-[var(--muted-foreground)] mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-lg text-[var(--foreground)]/80 mb-12 max-w-2xl mx-auto leading-relaxed">
             Select projects from my MBA experience, working with startups,
             enterprises, and public-sector organizations.
           </p>
@@ -123,22 +123,18 @@ export default function Projects() {
                 </p>
 
                 {/* Description */}
-                <p className="text-sm text-[var(--muted-foreground)] mb-4 leading-relaxed">
+                <p className="text-base text-[var(--muted-foreground)] mb-4 leading-relaxed">
                   {project.description}
                 </p>
 
                 {/* Highlights */}
-                <ul className="space-y-1.5 mb-5">
+                <ul className="space-y-2 mb-5 list-disc list-outside pl-5">
                   {project.highlights.map((h) => (
                     <li
                       key={h}
-                      className="flex items-start gap-2 text-sm text-[var(--foreground)]"
+                      className="text-base text-[var(--foreground)] leading-relaxed"
                     >
-                      <ExternalLink
-                        size={12}
-                        className="flex-shrink-0 mt-1 text-clay-500"
-                      />
-                      <span>{h}</span>
+                      {h}
                     </li>
                   ))}
                 </ul>

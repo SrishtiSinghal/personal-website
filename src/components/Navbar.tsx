@@ -52,15 +52,6 @@ export default function Navbar() {
     router.push(href);
   };
 
-  const handleLogoClick = () => {
-    setIsOpen(false);
-    if (pathname === "/") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
-      router.push("/");
-    }
-  };
-
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -73,25 +64,17 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <button
-            onClick={handleLogoClick}
-            className="text-lg font-bold tracking-tight gradient-text"
-          >
-            Srishti Singhal
-          </button>
-
+        <div className="flex items-center justify-end h-16">
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <button
                 key={link.name}
                 onClick={() => handleClick(link.href)}
-                className={`px-3 py-2 text-sm font-medium transition-colors rounded-lg hover:bg-[var(--muted)] ${
+                className={`px-4 py-2 text-base font-medium transition-all duration-200 rounded-lg ${
                   pathname === link.href
-                    ? "text-clay-600 dark:text-clay-400"
-                    : "text-[var(--muted-foreground)] hover:text-[var(--foreground)]"
+                    ? "text-clay-600 dark:text-clay-400 bg-clay-500/10"
+                    : "text-[var(--foreground)] hover:text-clay-600 dark:hover:text-clay-400 hover:bg-[var(--muted)]"
                 }`}
               >
                 {link.name}
@@ -149,10 +132,10 @@ export default function Navbar() {
                 <button
                   key={link.name}
                   onClick={() => handleClick(link.href)}
-                  className={`block w-full text-left px-3 py-2.5 text-sm font-medium rounded-lg transition-colors ${
+                  className={`block w-full text-left px-3 py-2.5 text-base font-medium rounded-lg transition-colors ${
                     pathname === link.href
                       ? "text-clay-600 dark:text-clay-400 bg-[var(--muted)]"
-                      : "text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--muted)]"
+                      : "text-[var(--foreground)] hover:text-clay-600 dark:hover:text-clay-400 hover:bg-[var(--muted)]"
                   }`}
                 >
                   {link.name}

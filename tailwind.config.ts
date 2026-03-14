@@ -38,7 +38,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-lora)", "Georgia", "serif"],
-        heading: ["var(--font-caveat)", "cursive"],
+        heading: ["var(--font-heading)", "sans-serif"],
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-in-out",

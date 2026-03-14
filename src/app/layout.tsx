@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
-import { Patrick_Hand, Lora } from "next/font/google";
+import { Space_Grotesk, Lora } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const patrickHand = Patrick_Hand({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  weight: "400",
-  variable: "--font-caveat",
+  variable: "--font-heading",
   display: "swap",
 });
 
@@ -59,7 +58,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${patrickHand.variable} ${lora.variable} antialiased`}
+        className={`${spaceGrotesk.variable} ${lora.variable} antialiased`}
       >
         <ThemeProvider>
           <Navbar />
